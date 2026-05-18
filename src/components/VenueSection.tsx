@@ -61,9 +61,9 @@ export default function VenueSection() {
                 boxShadow: '0 20px 50px rgba(0,0,0,0.18)',
               }}
             >
-              <img 
-                src="/m&a.jpeg" 
-                alt="Mostafa & Arwa" 
+              <img
+                src="/m&a.jpeg"
+                alt="Mostafa & Arwa"
                 className="w-full h-full object-cover transition-transform duration-700 hover:scale-103 select-none"
               />
 
@@ -111,8 +111,8 @@ export default function VenueSection() {
 
             <div className="space-y-4">
               {[
-                { icon: Calendar, label: 'Date', value: 'Thursday, 29 May 2026' },
-                { icon: Clock, label: 'Time', value: '7:00 PM Onwards' },
+                { icon: Calendar, label: 'Date', value: 'Friday, 29 May 2026' },
+                { icon: Clock, label: 'Time', value: '8:00 PM Onwards' },
                 { icon: MapPin, label: 'Venue', value: 'Nefertari Hall' },
               ].map(({ icon: Icon, label, value }) => (
                 <div
