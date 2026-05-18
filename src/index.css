@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --champagne: #c9a84c;
+  --champagne-light: #e8d5a3;
+  --ivory: #fdf8f0;
+  --cream: #f5ede0;
+  --beige: #e8d5b7;
+  --warm-black: #1a1410;
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Cormorant Garamond', serif;
+  background-color: var(--ivory);
+  color: var(--warm-black);
+  overflow-x: hidden;
+}
+
+.font-script {
+  font-family: 'Great Vibes', cursive;
+}
+
+.font-sans-elegant {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.font-serif-elegant {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--ivory);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--champagne);
+  border-radius: 3px;
+}
+
+/* Gold shimmer text */
+.gold-text {
+  background: linear-gradient(135deg, #b8860b 0%, #daa520 30%, #ffd700 50%, #daa520 70%, #b8860b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Decorative divider */
+.divider-gold {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.divider-gold::before,
+.divider-gold::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--champagne), transparent);
+}
+
+/* Particle glow */
+@keyframes float-up {
+  0% { transform: translateY(0) scale(1); opacity: 0.8; }
+  100% { transform: translateY(-120px) scale(0); opacity: 0; }
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.2; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+@keyframes gentle-sway {
+  0%, 100% { transform: rotate(-2deg); }
+  50% { transform: rotate(2deg); }
+}
+
+@keyframes door-swing {
+  0% { transform: perspective(800px) rotateY(0deg); }
+  100% { transform: perspective(800px) rotateY(-100deg); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 10px rgba(201,168,76,0.3); }
+  50% { box-shadow: 0 0 30px rgba(201,168,76,0.7), 0 0 60px rgba(201,168,76,0.3); }
+}
+
+.envelope-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
