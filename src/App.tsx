@@ -1,15 +1,15 @@
 import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import Envelope from './components/Envelope';
 import MainSite from './components/MainSite';
 
 export default function App() {
-  const stage = 'content';
   const [scrollLocked, setScrollLocked] = useState(true);
+  const [showIntro, setShowIntro] = useState(true);
 
   useEffect(() => {
     if (scrollLocked) {
       document.body.style.overflow = 'hidden';
-      // Force top alignment during door and locked stages
       window.scrollTo(0, 0);
     } else {
       document.body.style.overflow = 'unset';
@@ -20,35 +20,34 @@ export default function App() {
   }, [scrollLocked]);
 
   return (
-    <>
-      {stage === 'content' && (
-        <div className="relative w-full">
-          {/* Section 1: Cinematic Envelope fold at the top */}
-          <div className="relative w-full min-h-screen">
-            <Envelope onCardRevealed={() => {
-              // Wait 4 seconds for the guest to admire the luxurious invitation card,
-              // then unlock scroll and automatically slide down to the rest of the sections.
-              setTimeout(() => {
-                setScrollLocked(false);
-                setTimeout(() => {
-                  const heroEl = document.getElementById('hero-section');
-                  if (heroEl) {
-                    heroEl.scrollIntoView({ behavior: 'smooth' });
-                  } else {
-                    window.scrollTo({
-                      top: window.innerHeight,
-                      behavior: 'smooth'
-                    });
-                  }
-                }, 100);
-              }, 4000);
-            }} />
-          </div>
+    <div className="relative w-full">
+      <MainSite visible={true} />
 
-          {/* Section 2: Main Website Content Sections */}
-          <MainSite visible={true} />
-        </div>
-      )}
-    </>
+      <AnimatePresence>
+        {showIntro && (
+          <motion.div
+            className="fixed inset-0 z-[100] flex items-center justify-center"
+            initial={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1 }}
+          >
+            <Envelope
+              onCardRevealed={() => {
+                setTimeout(() => {
+                  setScrollLocked(false);
+                  setTimeout(() => {
+                    const heroEl = document.getElementById('hero-section');
+                    if (heroEl) {
+                      heroEl.scrollIntoView({ behavior: 'smooth' });
+                    }
+                    setTimeout(() => setShowIntro(false), 800);
+                  }, 150);
+                }, 3200);
+              }}
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
   );
 }

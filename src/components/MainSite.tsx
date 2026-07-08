@@ -1,12 +1,13 @@
 import { motion } from 'framer-motion';
 import HeroSection from './HeroSection';
-import GallerySection from './GallerySection';
-import TimelineSection from './TimelineSection';
-import VenueSection from './VenueSection';
+import QuoteSection from './QuoteSection';
 import CountdownSection from './CountdownSection';
-import MessagesSection from './MessagesSection';
-import ThankYouSection from './ThankYouSection';
+import TimelineSection from './TimelineSection';
+import LocationSection from './LocationSection';
+import GallerySection from './GallerySection';
+import FooterSection from './FooterSection';
 import Particles from './Particles';
+import MusicControl from './MusicControl';
 
 interface Props {
   visible: boolean;
@@ -19,18 +20,19 @@ export default function MainSite({ visible }: Props) {
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 1.5 }}
+      transition={{ duration: 1.2, ease: 'easeOut' }}
       className="relative"
     >
       <Particles />
+      <MusicControl />
 
       <HeroSection />
-      <GallerySection />
-      <TimelineSection />
-      <VenueSection />
+      <QuoteSection />
       <CountdownSection />
-      <MessagesSection />
-      <ThankYouSection />
+      <TimelineSection />
+      <LocationSection />
+      <GallerySection />
+      <FooterSection />
     </motion.div>
   );
 }
