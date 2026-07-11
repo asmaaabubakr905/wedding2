@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import { wedding } from '../config/wedding';
+import { playWeddingMusic } from '../hooks/useWeddingMusic';
 
 interface Props {
   onCardRevealed?: () => void;
@@ -46,11 +47,7 @@ export default function Envelope({ onCardRevealed }: Props) {
 
     setTimeout(() => setSealBroken(true), 280);
 
-    try {
-      const audio = new Audio(wedding.music);
-      audio.volume = 0.4;
-      audio.play().catch(() => {});
-    } catch { /* noop */ }
+    playWeddingMusic();
 
     setTimeout(() => setShowShower(true), 2000);
 
@@ -59,13 +56,13 @@ export default function Envelope({ onCardRevealed }: Props) {
 
   return (
     <div className="fixed inset-0 w-full h-full flex flex-col overflow-hidden select-none">
-      <div className="absolute inset-0 z-0 bg-[#2a2018]" />
+      <div className="absolute inset-0 z-0 bg-[#1a1410]" />
 
       {/* Sharp photo layer — faces stay visible on mobile (top of screen) */}
       <picture className="absolute inset-0 z-0 pointer-events-none block">
-        <source media="(max-width: 767px)" srcSet="/cinematic_bg_mobile.jpg" />
+        <source media="(max-width: 767px)" srcSet="/opening.jpeg" />
         <img
-          src="/cinematic_bg.jpg"
+          src="/opening.jpeg"
           alt=""
           aria-hidden
           className={`absolute inset-0 w-full h-full envelope-intro-photo ${
@@ -102,12 +99,15 @@ export default function Envelope({ onCardRevealed }: Props) {
         {/* Mobile: names over visible couple area at top */}
         {!opened && (
           <motion.div
-            className="absolute top-[max(1.25rem,env(safe-area-inset-top))] left-0 right-0 z-20 px-4 pointer-events-none md:hidden"
+            className="absolute top-[max(1.25rem,env(safe-area-inset-top))] left-0 right-0 z-20 px-4 pointer-events-none md:hidden text-center"
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.8 }}
           >
-            <p className="font-accent text-[8px] tracking-[0.32em] text-amber-100/75 uppercase mb-1">
+            <p
+              className="inline-block font-accent text-[9px] tracking-[0.34em] text-champagne-light uppercase mb-2 px-4 py-1.5 rounded-full bg-black/55 backdrop-blur-md border border-white/15"
+              style={{ textShadow: '0 1px 2px rgba(0,0,0,0.8)' }}
+            >
               Wedding Invitation
             </p>
             <p
@@ -120,7 +120,8 @@ export default function Envelope({ onCardRevealed }: Props) {
         )}
 
         <motion.p
-          className="font-accent text-amber-100/60 tracking-[0.28em] md:tracking-[0.35em] uppercase text-[9px] sm:text-[10px] md:text-xs w-full px-2"
+          className="font-accent tracking-[0.28em] md:tracking-[0.35em] uppercase text-[9px] sm:text-[10px] md:text-xs w-full px-2 text-white/95"
+          style={{ textShadow: '0 1px 10px rgba(0,0,0,0.75), 0 2px 24px rgba(0,0,0,0.45)' }}
           animate={opened ? { opacity: 0, y: -16 } : { opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
@@ -274,8 +275,9 @@ export default function Envelope({ onCardRevealed }: Props) {
         </motion.div>
 
         <motion.p
-          className="font-sans-elegant text-amber-100/50 text-[9px] sm:text-[10px] tracking-[0.25em] sm:tracking-[0.3em] uppercase w-full px-2"
-          animate={opened ? { opacity: 0 } : { opacity: [0.3, 0.7, 0.3] }}
+          className="font-sans-elegant text-[9px] sm:text-[10px] tracking-[0.25em] sm:tracking-[0.3em] uppercase w-full px-2 text-white/90"
+          style={{ textShadow: '0 1px 10px rgba(0,0,0,0.75), 0 2px 24px rgba(0,0,0,0.45)' }}
+          animate={opened ? { opacity: 0 } : { opacity: [0.85, 1, 0.85] }}
           transition={opened ? { duration: 0.25 } : { duration: 2.2, repeat: Infinity }}
         >
           Tap to open your invitation

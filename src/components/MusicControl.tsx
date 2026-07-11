@@ -1,12 +1,11 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Music, Volume2, VolumeX } from 'lucide-react';
-import { wedding } from '../config/wedding';
+import { useWeddingMusic } from '../hooks/useWeddingMusic';
 
 export default function MusicControl() {
-  const [playing, setPlaying] = useState(false);
+  const { isPlaying, toggle } = useWeddingMusic();
   const [visible, setVisible] = useState(false);
-  const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
     const timer = setTimeout(() => setVisible(true), 5000);
@@ -14,24 +13,8 @@ export default function MusicControl() {
   }, []);
 
   useEffect(() => {
-    audioRef.current = new Audio(wedding.music);
-    audioRef.current.loop = true;
-    audioRef.current.volume = 0.35;
-    return () => {
-      audioRef.current?.pause();
-    };
-  }, []);
-
-  const toggle = () => {
-    if (!audioRef.current) return;
-    if (playing) {
-      audioRef.current.pause();
-      setPlaying(false);
-    } else {
-      audioRef.current.play().catch(() => {});
-      setPlaying(true);
-    }
-  };
+    if (isPlaying) setVisible(true);
+  }, [isPlaying]);
 
   return (
     <AnimatePresence>
@@ -43,14 +26,14 @@ export default function MusicControl() {
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0 }}
           transition={{ type: 'spring', stiffness: 200, damping: 15 }}
-          aria-label={playing ? 'Mute music' : 'Play music'}
+          aria-label={isPlaying ? 'Mute music' : 'Play music'}
         >
-          {playing ? (
+          {isPlaying ? (
             <Volume2 size={18} className="text-champagne" />
           ) : (
             <VolumeX size={18} className="text-text-muted/50" />
           )}
-          {!playing && (
+          {!isPlaying && (
             <motion.div
               className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-blush/80 flex items-center justify-center"
               animate={{ scale: [1, 1.2, 1] }}

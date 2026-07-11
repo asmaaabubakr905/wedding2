@@ -58,8 +58,7 @@ export const wedding = {
     '/WhatsApp Image 2026-07-08 at 9.21.10 PM (1).jpeg',
     '/WhatsApp Image 2026-07-08 at 9.21.10 PM.jpeg',
     '/WhatsApp Image 2026-07-07 at 9.29.54 PM.jpeg',
-    '/WhatsApp Image 2026-07-07 at 9.34.07 PM.jpeg',
-    '/WhatsApp Image 2026-07-07 at 9.35.42 PM.jpeg',
+   
     
   ],
 
@@ -70,7 +69,7 @@ export const wedding = {
     tagline: 'A celebration of love awaits',
     cardTitle: 'Together, Forever',
     cardBody: 'Two hearts united in love,\none beautiful journey ahead.\nWe would be honored to have you\nshare our wedding day with us.',
-    backgroundImage: '/cinematic_bg.jpg',
+    backgroundImage: '/opening.jpeg',
   },
 
   rsvp: {
