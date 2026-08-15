@@ -20,7 +20,7 @@ export default function MessagesSection() {
   return (
     <section
       className="py-24 px-6"
-      style={{ background: 'linear-gradient(to bottom, #fdf8f0, #f5ede0)' }}
+      style={{ background: 'linear-gradient(to bottom, #fff6f8, #fceef3)' }}
     >
       <div className="max-w-5xl mx-auto">
         {/* Header */}
@@ -31,14 +31,14 @@ export default function MessagesSection() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <p className="font-sans-elegant text-xs tracking-[0.4em] text-amber-700/60 uppercase mb-3">
+          <p className="font-sans-elegant text-xs tracking-[0.4em] text-rose-700/60 uppercase mb-3">
             With Love
           </p>
           <h2 className="font-script text-6xl md:text-7xl text-stone-800 mb-4">
             Messages of Joy
           </h2>
           <div className="divider-gold max-w-sm mx-auto">
-            <span className="font-serif-elegant text-amber-600/40 text-lg">❧</span>
+            <span className="font-serif-elegant text-rose-400/50 text-lg">❧</span>
           </div>
         </motion.div>
 
@@ -49,7 +49,7 @@ export default function MessagesSection() {
               className="relative p-8 rounded-lg"
               style={{
                 background: 'rgba(255,255,255,0.6)',
-                border: '1px solid rgba(201,168,76,0.2)',
+                border: '1px solid rgba(212,120,140,0.2)',
                 backdropFilter: 'blur(4px)',
                 boxShadow: '0 4px 30px rgba(0,0,0,0.05)',
               }}
@@ -63,8 +63,8 @@ export default function MessagesSection() {
               <div
                 className="absolute -top-4 left-8 w-10 h-10 rounded-full flex items-center justify-center"
                 style={{
-                  background: 'linear-gradient(135deg, #c9a84c, #8b6914)',
-                  boxShadow: '0 4px 12px rgba(201,168,76,0.3)',
+                  background: 'linear-gradient(135deg, #e891a8, #c45c78)',
+                  boxShadow: '0 4px 12px rgba(212,120,140,0.3)',
                 }}
               >
                 <svg width="16" height="14" viewBox="0 0 16 14" fill="none">
@@ -74,7 +74,7 @@ export default function MessagesSection() {
 
               {/* Decorative corner */}
               <div className="absolute top-3 right-3">
-                <Heart size={16} fill="rgba(201,168,76,0.2)" stroke="rgba(201,168,76,0.4)" />
+                <Heart size={16} fill="rgba(212,120,140,0.2)" stroke="rgba(212,120,140,0.4)" />
               </div>
 
               <p className="font-serif-elegant italic text-stone-600 leading-relaxed mb-5 text-base">
@@ -82,8 +82,8 @@ export default function MessagesSection() {
               </p>
 
               <div className="flex items-center gap-3">
-                <div className="w-8 h-px bg-amber-400/50" />
-                <p className="font-sans-elegant text-xs tracking-widest text-amber-700/60 uppercase">
+                <div className="w-8 h-px bg-rose-300/50" />
+                <p className="font-sans-elegant text-xs tracking-widest text-rose-700/60 uppercase">
                   {msg.author}
                 </p>
               </div>

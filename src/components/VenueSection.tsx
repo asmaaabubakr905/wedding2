@@ -1,11 +1,12 @@
 import { motion } from 'framer-motion';
 import { MapPin, Clock, Calendar } from 'lucide-react';
+import { wedding } from '../config/wedding';
 
 export default function VenueSection() {
   return (
     <section
       className="py-24 px-6 relative overflow-hidden"
-      style={{ background: 'linear-gradient(to bottom, #f5ede0, #fdf8f0)' }}
+      style={{ background: 'linear-gradient(to bottom, #fceef3, #fff6f8)' }}
     >
       {/* Decorative arch pattern */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-5">
@@ -17,7 +18,7 @@ export default function VenueSection() {
               width: 200 + i * 100,
               height: 200 + i * 100,
               borderRadius: '50% 50% 0 0',
-              border: '1px solid #c9a84c',
+              border: '1px solid #d4788c',
               bottom: -100,
               left: `${10 + i * 12}%`,
             }}
@@ -34,14 +35,14 @@ export default function VenueSection() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <p className="font-sans-elegant text-xs tracking-[0.4em] text-amber-700/60 uppercase mb-3">
+          <p className="font-sans-elegant text-xs tracking-[0.4em] text-rose-700/60 uppercase mb-3">
             Join Us At
           </p>
           <h2 className="font-script text-6xl md:text-7xl text-stone-800 mb-4">
             The Venue
           </h2>
           <div className="divider-gold max-w-sm mx-auto">
-            <span className="font-serif-elegant text-amber-600/40 text-lg">❧</span>
+            <span className="font-serif-elegant text-rose-400/50 text-lg">❧</span>
           </div>
         </motion.div>
 
@@ -57,13 +58,13 @@ export default function VenueSection() {
             <div
               className="relative rounded-lg overflow-hidden aspect-[3/4]"
               style={{
-                border: '2.5px solid rgba(201,168,76,0.45)',
+                border: '2.5px solid rgba(212,120,140,0.45)',
                 boxShadow: '0 20px 50px rgba(0,0,0,0.18)',
               }}
             >
               <img
-                src="/m&a.jpeg"
-                alt="Mostafa & Arwa"
+                src={wedding.coupleImage}
+                alt={`${wedding.coupleDisplay}`}
                 className="w-full h-full object-cover transition-transform duration-700 hover:scale-103 select-none"
               />
 
@@ -78,10 +79,10 @@ export default function VenueSection() {
               />
 
               {/* Corner flourishes overlay */}
-              <div className="absolute top-4 left-4 w-4 h-4 border-t-2 border-l-2 border-[#c9a84c]/50 rounded-tl-sm pointer-events-none" />
-              <div className="absolute top-4 right-4 w-4 h-4 border-t-2 border-r-2 border-[#c9a84c]/50 rounded-tr-sm pointer-events-none" />
-              <div className="absolute bottom-4 left-4 w-4 h-4 border-b-2 border-l-2 border-[#c9a84c]/50 rounded-bl-sm pointer-events-none" />
-              <div className="absolute bottom-4 right-4 w-4 h-4 border-b-2 border-r-2 border-[#c9a84c]/50 rounded-br-sm pointer-events-none" />
+              <div className="absolute top-4 left-4 w-4 h-4 border-t-2 border-l-2 border-[#d4788c]/50 rounded-tl-sm pointer-events-none" />
+              <div className="absolute top-4 right-4 w-4 h-4 border-t-2 border-r-2 border-[#d4788c]/50 rounded-tr-sm pointer-events-none" />
+              <div className="absolute bottom-4 left-4 w-4 h-4 border-b-2 border-l-2 border-[#d4788c]/50 rounded-bl-sm pointer-events-none" />
+              <div className="absolute bottom-4 right-4 w-4 h-4 border-b-2 border-r-2 border-[#d4788c]/50 rounded-br-sm pointer-events-none" />
             </div>
           </motion.div>
 
@@ -96,11 +97,11 @@ export default function VenueSection() {
             <div>
               <h3
                 className="font-script text-5xl mb-2"
-                style={{ color: '#1a0e04' }}
+                style={{ color: '#4a2c36' }}
               >
                 Nefertari Hall
               </h3>
-              <p className="font-sans-elegant text-xs tracking-[0.3em] text-amber-700/50 uppercase">
+              <p className="font-sans-elegant text-xs tracking-[0.3em] text-rose-700/50 uppercase">
                 A palace of elegance
               </p>
             </div>
@@ -119,15 +120,15 @@ export default function VenueSection() {
                   key={label}
                   className="flex items-center gap-4 p-4 rounded-lg"
                   style={{
-                    background: 'rgba(201,168,76,0.06)',
-                    border: '1px solid rgba(201,168,76,0.2)',
+                    background: 'rgba(212,120,140,0.06)',
+                    border: '1px solid rgba(212,120,140,0.2)',
                   }}
                 >
                   <div
                     className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0"
-                    style={{ background: 'linear-gradient(135deg, #c9a84c22, #c9a84c44)' }}
+                    style={{ background: 'linear-gradient(135deg, #d4788c22, #d4788c44)' }}
                   >
-                    <Icon size={18} color="#c9a84c" />
+                    <Icon size={18} color="#d4788c" />
                   </div>
                   <div>
                     <p className="font-sans-elegant text-xs tracking-widest text-stone-400 uppercase">{label}</p>
@@ -141,11 +142,11 @@ export default function VenueSection() {
             <div
               className="p-5 rounded-lg text-center"
               style={{
-                background: 'linear-gradient(135deg, rgba(201,168,76,0.08), rgba(201,168,76,0.04))',
-                border: '1px solid rgba(201,168,76,0.25)',
+                background: 'linear-gradient(135deg, rgba(212,120,140,0.08), rgba(212,120,140,0.04))',
+                border: '1px solid rgba(212,120,140,0.25)',
               }}
             >
-              <p className="font-sans-elegant text-xs tracking-[0.3em] text-amber-700/60 uppercase mb-1">Dress Code</p>
+              <p className="font-sans-elegant text-xs tracking-[0.3em] text-rose-700/60 uppercase mb-1">Dress Code</p>
               <p className="font-serif-elegant text-stone-600 text-xl italic">Formal Elegance</p>
             </div>
           </motion.div>

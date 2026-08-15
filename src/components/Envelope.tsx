@@ -56,13 +56,13 @@ export default function Envelope({ onCardRevealed }: Props) {
 
   return (
     <div className="fixed inset-0 w-full h-full flex flex-col overflow-hidden select-none">
-      <div className="absolute inset-0 z-0 bg-[#1a1410]" />
+      <div className="absolute inset-0 z-0 bg-[#1a0e12]" />
 
       {/* Sharp photo layer — faces stay visible on mobile (top of screen) */}
       <picture className="absolute inset-0 z-0 pointer-events-none block">
-        <source media="(max-width: 767px)" srcSet="/opening.jpeg" />
+        <source media="(max-width: 767px)" srcSet="/opening.jpg" />
         <img
-          src="/opening.jpeg"
+          src="/opening.jpg"
           alt=""
           aria-hidden
           className={`absolute inset-0 w-full h-full envelope-intro-photo ${
@@ -78,13 +78,13 @@ export default function Envelope({ onCardRevealed }: Props) {
         {Array.from({ length: isMobile ? 12 : 22 }).map((_, i) => (
           <motion.div
             key={i}
-            className="absolute rounded-full bg-amber-300"
+            className="absolute rounded-full bg-rose-300"
             style={{
               width: 2 + (i % 2),
               height: 2 + (i % 2),
               left: `${(i * 41) % 100}%`,
               top: `${60 + (i * 11) % 35}%`,
-              boxShadow: '0 0 6px #ffd700',
+              boxShadow: '0 0 6px #e891a8',
             }}
             animate={{
               y: [0, -100 - (i % 4) * 30],
@@ -143,9 +143,9 @@ export default function Envelope({ onCardRevealed }: Props) {
           <div
             className="absolute inset-0 rounded-[5px]"
             style={{
-              background: 'linear-gradient(180deg, #faf3ec 0%, #ebe0d0 100%)',
-              border: '1px solid rgba(201,168,76,0.22)',
-              boxShadow: 'inset 0 10px 28px rgba(80,60,40,0.1)',
+              background: 'linear-gradient(180deg, #fff6f8 0%, #f8dce4 100%)',
+              border: '1px solid rgba(212,120,140,0.22)',
+              boxShadow: 'inset 0 10px 28px rgba(80,40,55,0.1)',
               zIndex: 1,
             }}
           />
@@ -158,8 +158,8 @@ export default function Envelope({ onCardRevealed }: Props) {
               height: cardH,
               left: '50%',
               marginLeft: -cardW / 2,
-              background: 'linear-gradient(150deg, #fffcf8, #f5ede0)',
-              border: '1.5px solid rgba(201,168,76,0.42)',
+              background: 'linear-gradient(150deg, #fff8fa, #fceef3)',
+              border: '1.5px solid rgba(212,120,140,0.42)',
               boxShadow: '0 26px 58px rgba(0,0,0,0.32)',
               transformStyle: 'preserve-3d',
             }}
@@ -175,7 +175,7 @@ export default function Envelope({ onCardRevealed }: Props) {
               className="absolute inset-0 pointer-events-none"
               style={{
                 background:
-                  'linear-gradient(105deg, transparent 40%, rgba(255,230,160,0.2) 50%, transparent 60%)',
+                  'linear-gradient(105deg, transparent 40%, rgba(255,210,220,0.28) 50%, transparent 60%)',
                 backgroundSize: '220% 100%',
               }}
               animate={opened ? { backgroundPosition: ['150% 0', '-50% 0'] } : {}}
@@ -201,18 +201,18 @@ export default function Envelope({ onCardRevealed }: Props) {
           >
             <defs>
               <linearGradient id="pL" x1="0%" y1="100%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#f7efe5" /><stop offset="100%" stopColor="#e8dcc8" />
+                <stop offset="0%" stopColor="#fff2f5" /><stop offset="100%" stopColor="#f3d0db" />
               </linearGradient>
               <linearGradient id="pR" x1="100%" y1="100%" x2="0%" y2="0%">
-                <stop offset="0%" stopColor="#f2eae0" /><stop offset="100%" stopColor="#e0d4c0" />
+                <stop offset="0%" stopColor="#fce8ee" /><stop offset="100%" stopColor="#efb8c8" />
               </linearGradient>
               <linearGradient id="pB" x1="0%" y1="100%" x2="0%" y2="0%">
-                <stop offset="0%" stopColor="#e5d9c8" /><stop offset="100%" stopColor="#faf3ec" />
+                <stop offset="0%" stopColor="#efc4d0" /><stop offset="100%" stopColor="#fff6f8" />
               </linearGradient>
             </defs>
-            <path d={`M 0 ${H} L ${CX} ${FOLD_Y} L 0 0 Z`} fill="url(#pL)" stroke="rgba(201,168,76,0.2)" strokeWidth="0.7" />
-            <path d={`M ${W} ${H} L ${CX} ${FOLD_Y} L ${W} 0 Z`} fill="url(#pR)" stroke="rgba(201,168,76,0.2)" strokeWidth="0.7" />
-            <path d={`M 0 ${H} L ${CX} 95 L ${W} ${H} Z`} fill="url(#pB)" stroke="rgba(201,168,76,0.28)" strokeWidth="0.9" />
+            <path d={`M 0 ${H} L ${CX} ${FOLD_Y} L 0 0 Z`} fill="url(#pL)" stroke="rgba(212,120,140,0.2)" strokeWidth="0.7" />
+            <path d={`M ${W} ${H} L ${CX} ${FOLD_Y} L ${W} 0 Z`} fill="url(#pR)" stroke="rgba(212,120,140,0.2)" strokeWidth="0.7" />
+            <path d={`M 0 ${H} L ${CX} 95 L ${W} ${H} Z`} fill="url(#pB)" stroke="rgba(212,120,140,0.28)" strokeWidth="0.9" />
           </svg>
 
           {/* Top flap */}
@@ -230,10 +230,10 @@ export default function Envelope({ onCardRevealed }: Props) {
             <svg viewBox={`0 0 ${W} ${FOLD_Y}`} preserveAspectRatio="none" className="block w-full h-full">
               <defs>
                 <linearGradient id="pT" x1="0%" y1="0%" x2="0%" y2="100%">
-                  <stop offset="0%" stopColor="#ffffff" /><stop offset="100%" stopColor="#f5ebe0" />
+                  <stop offset="0%" stopColor="#ffffff" /><stop offset="100%" stopColor="#fce8ee" />
                 </linearGradient>
               </defs>
-              <path d={`M 0 0 L ${W} 0 L ${CX} ${FOLD_Y} Z`} fill="url(#pT)" stroke="rgba(201,168,76,0.28)" strokeWidth="0.9" vectorEffect="non-scaling-stroke" />
+              <path d={`M 0 0 L ${W} 0 L ${CX} ${FOLD_Y} Z`} fill="url(#pT)" stroke="rgba(212,120,140,0.28)" strokeWidth="0.9" vectorEffect="non-scaling-stroke" />
             </svg>
 
             <motion.div
@@ -243,14 +243,14 @@ export default function Envelope({ onCardRevealed }: Props) {
                 height: SEAL_SIZE,
                 left: `calc(50% - ${SEAL_SIZE / 2}px)`,
                 top: `calc(100% - ${SEAL_SIZE / 2}px)`,
-                background: 'radial-gradient(circle at 32% 28%, #ffe08a, #c9a84c 52%, #8b6914 100%)',
-                boxShadow: '0 5px 18px rgba(0,0,0,0.35), inset 0 2px 4px rgba(255,240,180,0.5)',
+                background: 'radial-gradient(circle at 32% 28%, #f5c4d0, #d4788c 52%, #a84d68 100%)',
+                boxShadow: '0 5px 18px rgba(0,0,0,0.35), inset 0 2px 4px rgba(255,220,230,0.55)',
                 zIndex: 25,
               }}
               animate={sealBroken ? { scale: 0, opacity: 0 } : { scale: 1, opacity: 1 }}
               transition={{ duration: 0.4, ease: 'easeIn' }}
             >
-              <span className="font-script text-base text-white/95 leading-none pl-0.5">M&Y</span>
+              <span className="font-script text-base text-white/95 leading-none pl-0.5">{wedding.groom[0]}&{wedding.bride[0]}</span>
             </motion.div>
           </motion.div>
 
@@ -259,7 +259,7 @@ export default function Envelope({ onCardRevealed }: Props) {
               {Array.from({ length: 10 }).map((_, i) => (
                 <motion.div
                   key={i}
-                  className="absolute rounded-full bg-amber-200"
+                  className="absolute rounded-full bg-rose-200"
                   style={{ width: 3, height: 3, left: '50%', top: `${(FOLD_Y / H) * 100 - 4}%` }}
                   initial={{ opacity: 1 }}
                   animate={{
@@ -295,8 +295,8 @@ export default function Envelope({ onCardRevealed }: Props) {
                 height: 8 + (i % 4),
                 left: `${(i * 22) % 100}%`,
                 borderRadius: '30% 70% 70% 30% / 30% 30% 70% 70%',
-                background: i % 2 ? 'linear-gradient(#ffeaa0,#ffd700)' : 'linear-gradient(#f5d0d8,#e8b4b8)',
-                boxShadow: '0 0 6px rgba(255,215,0,0.5)',
+                background: i % 2 ? 'linear-gradient(#f5c4d0,#d4788c)' : 'linear-gradient(#f8d0dc,#e8a0b4)',
+                boxShadow: '0 0 6px rgba(232,144,168,0.5)',
               }}
               initial={{ y: -30, opacity: 0 }}
               animate={{

@@ -33,7 +33,7 @@ export default function HeroSection() {
           transition={{ duration: 0.7 }}
           viewport={{ once: true }}
         >
-          You are cordially invited to the wedding of
+          You are cordially invited to the engagement of
         </motion.p>
 
         <motion.h1
@@ -78,13 +78,13 @@ export default function HeroSection() {
           <motion.div animate={{ y: [0, -7, 0] }} transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }} className="relative">
             <div
               className="absolute -inset-3 rounded-2xl"
-              style={{ background: 'linear-gradient(135deg, rgba(232,213,163,0.35), rgba(240,216,220,0.25))', filter: 'blur(14px)' }}
+              style={{ background: 'linear-gradient(135deg, rgba(239,184,200,0.4), rgba(244,184,200,0.3))', filter: 'blur(14px)' }}
             />
             <img
               src={wedding.heroImage}
               alt={`${wedding.coupleDisplay} Wedding`}
               className="relative w-[220px] md:w-[270px] rounded-2xl object-cover gold-border-frame"
-              style={{ border: '2px solid rgba(201,168,76,0.35)', boxShadow: '0 22px 48px rgba(61,52,40,0.12)' }}
+              style={{ border: '2px solid rgba(212,120,140,0.4)', boxShadow: '0 22px 48px rgba(74,44,54,0.14)' }}
             />
           </motion.div>
         </motion.div>
@@ -103,7 +103,7 @@ export default function HeroSection() {
           >
             <p className="font-sans-elegant text-[10px] tracking-[0.28em] text-text-muted uppercase">Scroll</p>
             <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden>
-              <path d="M12 5v14M5 12l7 7 7-7" stroke="#c9a84c" strokeWidth="1.5" fill="none" strokeLinecap="round" />
+              <path d="M12 5v14M5 12l7 7 7-7" stroke="#d4788c" strokeWidth="1.5" fill="none" strokeLinecap="round" />
             </svg>
           </motion.div>
         </motion.div>

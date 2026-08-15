@@ -11,7 +11,7 @@ export default function QuoteSection() {
       </div>
 
       <div className="max-w-4xl mx-auto relative">
-        <SectionHeader eyebrow="Blessing" title="A Sacred Promise" />
+        <SectionHeader eyebrow="The Vow" title="A Promise" />
 
         <motion.div
           className="relative mt-2"
@@ -33,24 +33,21 @@ export default function QuoteSection() {
 
             <div className="relative z-10 flex flex-col items-center">
               <motion.p
-                className="font-arabic text-[1.35rem] sm:text-[1.5rem] md:text-[1.65rem] text-text leading-relaxed mb-8 md:mb-10"
-                dir="rtl"
-                lang="ar"
+                className="font-script text-4xl text-champagne mb-8"
                 initial={{ scale: 0.95, opacity: 0 }}
                 whileInView={{ scale: 1, opacity: 1 }}
                 transition={{ delay: 0.15, duration: 0.6 }}
                 viewport={{ once: true }}
               >
-                بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
+                {wedding.quote.eyebrow}
               </motion.p>
 
-              <blockquote
-                className="quran-verse text-[1.65rem] sm:text-[1.85rem] md:text-[2.15rem] lg:text-[2.35rem] text-text font-normal max-w-3xl mx-auto mb-10 md:mb-12 px-1 sm:px-4"
-                dir="rtl"
-                lang="ar"
-                cite="Quran 30:21"
-              >
-                {wedding.quote.text}
+              <blockquote className="font-serif-elegant italic text-2xl md:text-3xl text-text text-center max-w-2xl mx-auto mb-10 leading-relaxed">
+                {wedding.quote.lines.map((line) => (
+                  <span key={line} className="block">
+                    {line}
+                  </span>
+                ))}
               </blockquote>
 
               <div className="divider-gold max-w-[280px] md:max-w-xs mx-auto w-full">
