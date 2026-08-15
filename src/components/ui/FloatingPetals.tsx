@@ -4,7 +4,7 @@ interface FloatingPetalsProps {
   count?: number;
 }
 
-const COLORS = ['#f0d8dc', '#f5e6a8', '#faf0f2', '#e8d5a3'];
+const COLORS = ['#f4b8c8', '#efb8c8', '#fdf2f5', '#e891a8'];
 
 export default function FloatingPetals({ count = 10 }: FloatingPetalsProps) {
   return (

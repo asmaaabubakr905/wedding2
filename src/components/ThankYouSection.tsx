@@ -5,7 +5,7 @@ export default function ThankYouSection() {
     <section
       className="relative py-32 px-6 text-center overflow-hidden"
       style={{
-        background: 'linear-gradient(160deg, #1a0e04 0%, #2d1a08 50%, #1a0e04 100%)',
+        background: 'linear-gradient(160deg, #1a0e12 0%, #3a1824 50%, #1a0e12 100%)',
       }}
     >
       {/* Floating sparkles */}
@@ -30,7 +30,7 @@ export default function ThankYouSection() {
             }}
           >
             <svg width="8" height="8" viewBox="0 0 8 8">
-              <path d="M4 0L4.5 3.5H8L5 5.5L6 8L4 6.5L2 8L3 5.5L0 3.5H3.5Z" fill="#ffd700" opacity="0.7" />
+              <path d="M4 0L4.5 3.5H8L5 5.5L6 8L4 6.5L2 8L3 5.5L0 3.5H3.5Z" fill="#efb8c8" opacity="0.7" />
             </svg>
           </motion.div>
         ))}
@@ -41,7 +41,7 @@ export default function ThankYouSection() {
         className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden"
         style={{ opacity: 0.03 }}
       >
-        <span className="font-script text-amber-200" style={{ fontSize: '20rem', whiteSpace: 'nowrap' }}>
+        <span className="font-script text-rose-200" style={{ fontSize: '20rem', whiteSpace: 'nowrap' }}>
           Forever
         </span>
       </div>
@@ -62,8 +62,8 @@ export default function ThankYouSection() {
             <svg width="70" height="65" viewBox="0 0 70 65">
               <defs>
                 <linearGradient id="heartGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#ffd700" />
-                  <stop offset="100%" stopColor="#c9a84c" />
+                  <stop offset="0%" stopColor="#efb8c8" />
+                  <stop offset="100%" stopColor="#d4788c" />
                 </linearGradient>
               </defs>
               <path
@@ -76,7 +76,7 @@ export default function ThankYouSection() {
         </motion.div>
 
         <motion.p
-          className="font-sans-elegant text-xs tracking-[0.4em] text-amber-500/60 uppercase mb-4"
+          className="font-sans-elegant text-xs tracking-[0.4em] text-rose-300/60 uppercase mb-4"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.3 }}
@@ -86,7 +86,7 @@ export default function ThankYouSection() {
         </motion.p>
 
         <motion.h2
-          className="font-script text-6xl md:text-8xl text-amber-200 mb-6 leading-none"
+          className="font-script text-6xl md:text-8xl text-rose-100 mb-6 leading-none"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
@@ -102,11 +102,11 @@ export default function ThankYouSection() {
           transition={{ delay: 0.4 }}
           viewport={{ once: true }}
         >
-          <div className="w-20 h-px bg-gradient-to-r from-transparent to-amber-600/50" />
+          <div className="w-20 h-px bg-gradient-to-r from-transparent to-rose-400/50" />
           <svg width="16" height="16" viewBox="0 0 16 16">
-            <path d="M8 1L10 6H15L11 9L13 14L8 11L3 14L5 9L1 6H6Z" fill="#c9a84c" opacity="0.7" />
+            <path d="M8 1L10 6H15L11 9L13 14L8 11L3 14L5 9L1 6H6Z" fill="#d4788c" opacity="0.7" />
           </svg>
-          <div className="w-20 h-px bg-gradient-to-l from-transparent to-amber-600/50" />
+          <div className="w-20 h-px bg-gradient-to-l from-transparent to-rose-400/50" />
         </motion.div>
 
         <motion.p
@@ -126,8 +126,8 @@ export default function ThankYouSection() {
           transition={{ delay: 0.6 }}
           viewport={{ once: true }}
         >
-          <p className="font-script text-4xl text-amber-300">Mostafa & Arwa</p>
-          <p className="font-sans-elegant text-xs tracking-[0.4em] text-amber-500/50 uppercase">
+          <p className="font-script text-4xl text-rose-200">Mostafa & Arwa</p>
+          <p className="font-sans-elegant text-xs tracking-[0.4em] text-rose-300/50 uppercase">
             29 · 05 · 2026
           </p>
         </motion.div>
@@ -141,23 +141,23 @@ export default function ThankYouSection() {
           viewport={{ once: true }}
         >
           <svg width="200" height="30" viewBox="0 0 200 30">
-            <line x1="0" y1="15" x2="80" y2="15" stroke="rgba(201,168,76,0.3)" strokeWidth="1" />
-            <path d="M90 15 L95 5 L100 15 L105 5 L110 15" stroke="#c9a84c" strokeWidth="1" fill="none" opacity="0.6" />
-            <line x1="120" y1="15" x2="200" y2="15" stroke="rgba(201,168,76,0.3)" strokeWidth="1" />
-            <circle cx="100" cy="15" r="3" fill="#c9a84c" opacity="0.5" />
+            <line x1="0" y1="15" x2="80" y2="15" stroke="rgba(212,120,140,0.3)" strokeWidth="1" />
+            <path d="M90 15 L95 5 L100 15 L105 5 L110 15" stroke="#d4788c" strokeWidth="1" fill="none" opacity="0.6" />
+            <line x1="120" y1="15" x2="200" y2="15" stroke="rgba(212,120,140,0.3)" strokeWidth="1" />
+            <circle cx="100" cy="15" r="3" fill="#d4788c" opacity="0.5" />
           </svg>
         </motion.div>
 
         {/* Small Elegant Creator Credit */}
         <motion.div
-          className="mt-8 text-[10px] md:text-[11px] tracking-[0.3em] uppercase text-stone-500/50 hover:text-amber-500/60 transition-colors duration-500"
+          className="mt-8 text-[10px] md:text-[11px] tracking-[0.3em] uppercase text-stone-500/50 hover:text-rose-300/60 transition-colors duration-500"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 0.8 }}
           transition={{ delay: 1.0, duration: 1 }}
           viewport={{ once: true }}
         >
           <span className="font-sans-elegant select-none">Handcrafted with Love by</span>{" "}
-          <span className="font-sans-elegant text-amber-500/60 font-semibold select-all">Asmaa</span>
+          <span className="font-sans-elegant text-rose-300/60 font-semibold select-all">Asmaa</span>
         </motion.div>
       </div>
     </section>

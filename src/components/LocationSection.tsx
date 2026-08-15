@@ -13,7 +13,7 @@ export default function LocationSection() {
 
         <motion.div
           className="relative rounded-2xl overflow-hidden aspect-[16/9] sm:aspect-[21/9] mb-8 md:mb-10 gold-border-frame"
-          style={{ border: '2px solid rgba(201,168,76,0.28)', boxShadow: '0 18px 44px rgba(61,52,40,0.1)' }}
+          style={{ border: '2px solid rgba(212,120,140,0.28)', boxShadow: '0 18px 44px rgba(74,44,54,0.1)' }}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.75 }}

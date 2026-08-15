@@ -17,7 +17,7 @@ export default function GallerySection() {
               transition={{ duration: 0.5, delay: i * 0.05 }}
               viewport={{ once: true }}
               whileHover={{ scale: 1.02 }}
-              style={{ border: '1.5px solid rgba(201,168,76,0.22)', boxShadow: '0 10px 28px rgba(61,52,40,0.08)' }}
+              style={{ border: '1.5px solid rgba(212,120,140,0.22)', boxShadow: '0 10px 28px rgba(74,44,54,0.08)' }}
             >
               <img src={src} alt={`Memory ${i + 1}`} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
               <div className="absolute inset-0 bg-gradient-to-t from-cream/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400" />

@@ -13,7 +13,7 @@ export default function FooterSection() {
             <svg width="52" height="48" viewBox="0 0 56 52">
               <defs>
                 <linearGradient id="footerHeart" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#e8d5a3" /><stop offset="100%" stopColor="#c9a84c" />
+                  <stop offset="0%" stopColor="#efb8c8" /><stop offset="100%" stopColor="#d4788c" />
                 </linearGradient>
               </defs>
               <path d="M28 48 C28 48 4 34 4 16 C4 8 10 2 18 2 C23 2 26 5 28 10 C30 5 33 2 38 2 C46 2 52 8 52 16 C52 34 28 48 28 48Z" fill="url(#footerHeart)" />

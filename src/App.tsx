@@ -1,53 +1,64 @@
-import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import Envelope from './components/Envelope';
-import MainSite from './components/MainSite';
+import { useEffect, useState } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
+import MysteryScene from './experience/MysteryScene';
+import DoorScene from './components/DoorScene';
+import LoveWorld from './experience/LoveWorld';
+import { pauseWeddingMusic } from './hooks/useWeddingMusic';
+
+export type ExperiencePhase = 'mystery' | 'door' | 'world';
 
 export default function App() {
-  const [scrollLocked, setScrollLocked] = useState(true);
-  const [showIntro, setShowIntro] = useState(true);
+  const [phase, setPhase] = useState<ExperiencePhase>('mystery');
+  const [runId, setRunId] = useState(0);
 
   useEffect(() => {
-    if (scrollLocked) {
-      document.body.style.overflow = 'hidden';
-      window.scrollTo(0, 0);
-    } else {
-      document.body.style.overflow = 'unset';
-    }
+    const lock = phase !== 'world';
+    document.body.style.overflow = lock ? 'hidden' : 'unset';
+    if (lock) window.scrollTo(0, 0);
     return () => {
       document.body.style.overflow = 'unset';
     };
-  }, [scrollLocked]);
+  }, [phase]);
+
+  const replay = () => {
+    pauseWeddingMusic();
+    window.scrollTo(0, 0);
+    setPhase('mystery');
+    setRunId((id) => id + 1);
+  };
 
   return (
-    <div className="relative w-full">
-      <MainSite visible={true} />
+    <div className="relative w-full min-h-screen bg-wine-deep">
+      <div className="film-grain" />
 
-      <AnimatePresence>
-        {showIntro && (
+      <AnimatePresence mode="wait">
+        {phase === 'mystery' && (
           <motion.div
-            className="fixed inset-0 z-[100] flex items-center justify-center"
+            key={`mystery-${runId}`}
+            className="fixed inset-0 z-40"
             initial={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 1 }}
+            exit={{ opacity: 0, filter: 'blur(12px)' }}
+            transition={{ duration: 1.1 }}
           >
-            <Envelope
-              onCardRevealed={() => {
-                setTimeout(() => {
-                  setScrollLocked(false);
-                  setTimeout(() => {
-                    const heroEl = document.getElementById('hero-section');
-                    if (heroEl) {
-                      heroEl.scrollIntoView({ behavior: 'smooth' });
-                    }
-                    setTimeout(() => setShowIntro(false), 800);
-                  }, 150);
-                }, 3200);
-              }}
-            />
+            <MysteryScene onComplete={() => setPhase('door')} />
+          </motion.div>
+        )}
+
+        {phase === 'door' && (
+          <motion.div
+            key={`door-${runId}`}
+            className="fixed inset-0 z-40"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1.8 }}
+          >
+            <DoorScene onComplete={() => setPhase('world')} />
           </motion.div>
         )}
       </AnimatePresence>
+
+      {phase === 'world' && <LoveWorld key={`world-${runId}`} onReplay={replay} />}
     </div>
   );
 }
