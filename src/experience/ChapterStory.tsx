@@ -7,10 +7,9 @@ import { FloatingPetals } from './Atmosphere';
 interface Props {
   setChapter: (id: number) => void;
   envelopeOpen: boolean;
-  onEnvelope: () => void;
 }
 
-export default function ChapterStory({ setChapter, envelopeOpen, onEnvelope }: Props) {
+export default function ChapterStory({ setChapter, envelopeOpen }: Props) {
   const ref = useRef<HTMLElement>(null);
   useChapterInView(ref, 0, setChapter);
 
@@ -38,11 +37,11 @@ export default function ChapterStory({ setChapter, envelopeOpen, onEnvelope }: P
         <div className="gold-hairline w-24 mx-auto mb-16" />
 
         <div className="relative overflow-x-auto pb-6 snap-x snap-mandatory md:overflow-visible">
-          <div className="flex md:grid md:grid-cols-4 gap-5 min-w-max md:min-w-0">
+          <div className="flex md:grid md:grid-cols-4 gap-5 min-w-max md:min-w-0 w-full">
             {STORY_FRAMES.map((frame, i) => (
               <motion.figure
                 key={frame.src}
-                className="relative w-[72vw] sm:w-64 md:w-auto shrink-0 snap-center"
+                className="relative w-[min(72vw,320px)] sm:w-64 md:w-auto shrink-0 snap-center"
                 initial={{ opacity: 0, x: 80 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.9, delay: i * 0.12 }}
@@ -78,15 +77,6 @@ export default function ChapterStory({ setChapter, envelopeOpen, onEnvelope }: P
           <p className="font-display text-2xl md:text-4xl text-text">One story.</p>
           <p className="font-script text-4xl md:text-5xl text-rose">One forever.</p>
         </motion.div>
-
-        <button
-          type="button"
-          onClick={onEnvelope}
-          className="absolute top-8 right-2 md:right-8 w-12 h-12 rounded-full bg-[radial-gradient(circle_at_30%_30%,#d4c4a0,#8a5a32)] shadow-lg text-wine text-xs font-script"
-          aria-label="Hidden envelope"
-        >
-          {wedding.groom[0]}&{wedding.bride[0]}
-        </button>
 
         {envelopeOpen && (
           <motion.aside

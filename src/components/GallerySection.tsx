@@ -11,7 +11,7 @@ export default function GallerySection() {
           {wedding.gallery.map((src, i) => (
             <motion.div
               key={i}
-              className="relative aspect-[3/4] w-[240px] md:w-auto shrink-0 snap-center rounded-xl overflow-hidden group cursor-pointer bg-white"
+              className="relative aspect-[3/4] w-[min(240px,90vw)] md:w-auto shrink-0 snap-center rounded-xl overflow-hidden group cursor-pointer bg-white"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: i * 0.05 }}

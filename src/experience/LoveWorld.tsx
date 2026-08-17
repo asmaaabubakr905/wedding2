@@ -32,10 +32,10 @@ export default function LoveWorld({ onReplay }: Props) {
     <div className="relative love-night">
       <CursorSparkles />
       <ChapterNav chapter={finale ? 4 : chapter} />
-      <WorldHud />
+      <WorldHud onEnvelope={() => setEnvelopeOpen((v) => !v)} />
       <SecretHeart notes={SECRET_NOTES} />
 
-      <ChapterStory setChapter={onChapter} envelopeOpen={envelopeOpen} onEnvelope={() => setEnvelopeOpen((v) => !v)} />
+      <ChapterStory setChapter={onChapter} envelopeOpen={envelopeOpen} />
       <ChapterPromise setChapter={onChapter} />
       <ChapterDay setChapter={onChapter} />
       <ChapterCelebration setChapter={onChapter} />

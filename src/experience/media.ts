@@ -1,22 +1,22 @@
 import { wedding } from '../config/wedding';
 
 export const STORY_FRAMES = [
-  { src: '/hero.jpg', caption: 'Two souls' },
-  { src: '/opening.jpg', caption: 'One evening' },
-  { src: '/WhatsApp Image 2026-07-07 at 3.38.02 PM.jpeg', caption: 'A glance' },
-  { src: '/WhatsApp Image 2026-07-07 at 9.29.54 PM.jpeg', caption: 'Held close' },
+  { src: '/1.jpeg', caption: 'Two souls' },
+  { src: '/2.jpeg', caption: 'One evening' },
+  { src: '/3.jpeg', caption: 'A glance' },
+  { src: '/4.jpeg', caption: 'Held close' },
 ];
 
 export const MEMORY_WALL = [
-  { src: '/hero.jpg', caption: 'The portrait', kind: 'frame' as const, rotate: -3 },
-  { src: '/opening.jpg', caption: 'The night they arrived', kind: 'film' as const, rotate: 2 },
-  { src: '/gallery-1.jpg', caption: 'The table is set', kind: 'polaroid' as const, rotate: 4 },
-  { src: '/gallery-2.jpg', caption: 'A promise in flowers', kind: 'frame' as const, rotate: -2 },
-  { src: '/gallery-3.jpg', caption: 'The aisle waits', kind: 'polaroid' as const, rotate: -5 },
-  { src: '/gallery-4.jpg', caption: 'Two rings', kind: 'film' as const, rotate: 3 },
-  { src: '/WhatsApp Image 2026-07-08 at 9.21.10 PM.jpeg', caption: 'A memory kept', kind: 'polaroid' as const, rotate: 1 },
-  { src: '/WhatsApp Image 2026-07-08 at 9.21.10 PM (1).jpeg', caption: 'Soft light', kind: 'frame' as const, rotate: -4 },
-  { src: '/venue.jpg', caption: 'Where forever begins', kind: 'film' as const, rotate: 2 },
+  { src: '/5.jpeg', caption: 'The portrait', kind: 'frame' as const, rotate: -3 },
+  { src: '/6.jpeg', caption: 'The night they arrived', kind: 'film' as const, rotate: 2 },
+  { src: '/1.jpeg', caption: 'The table is set', kind: 'polaroid' as const, rotate: 4 },
+  { src: '/2.jpeg', caption: 'A promise in flowers', kind: 'frame' as const, rotate: -2 },
+  { src: '/3.jpeg', caption: 'The aisle waits', kind: 'polaroid' as const, rotate: -5 },
+  { src: '/7.jpeg', caption: 'Two rings', kind: 'film' as const, rotate: 3 },
+  { src: '/kids.jpeg', caption: 'A memory kept', kind: 'polaroid' as const, rotate: 1 },
+  { src: '/4.jpeg', caption: 'Soft light', kind: 'frame' as const, rotate: -4 },
+  { src: '/6.jpeg', caption: 'Where forever begins', kind: 'film' as const, rotate: 2 },
 ];
 
 export const SECRET_NOTES = [

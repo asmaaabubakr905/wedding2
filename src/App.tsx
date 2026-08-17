@@ -13,10 +13,12 @@ export default function App() {
 
   useEffect(() => {
     const lock = phase !== 'world';
-    document.body.style.overflow = lock ? 'hidden' : 'unset';
+    // Lock only vertical scrolling so we don't remove global `overflow-x: hidden` from CSS.
+    // Removing the entire `overflow` style was allowing horizontal scrolling on some pages.
+    document.body.style.overflowY = lock ? 'hidden' : '';
     if (lock) window.scrollTo(0, 0);
     return () => {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflowY = '';
     };
   }, [phase]);
 

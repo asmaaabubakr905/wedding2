@@ -16,6 +16,11 @@
   --muted: #7a645c;
 }
 
+/* Ensure consistent box-sizing and prevent media overflow */
+*, *::before, *::after { box-sizing: border-box; }
+img, svg, video { max-width: 100%; height: auto; display: block; }
+
+
 * { scroll-behavior: smooth; }
 
 html, body, #root { min-height: 100%; }

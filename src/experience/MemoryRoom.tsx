@@ -10,13 +10,13 @@ export default function MemoryRoom() {
       <p className="font-accent text-[10px] tracking-[0.5em] text-gold text-center mb-4">THE MEMORY ROOM</p>
       <h2 className="font-script text-5xl md:text-6xl text-center text-text mb-14">Held in light</h2>
 
-      <div className="md:hidden flex overflow-x-auto snap-x snap-mandatory gap-5 pb-6 -mx-5 px-5">
+      <div className="md:hidden flex overflow-x-auto snap-x snap-mandatory gap-5 pb-6 px-5">
         {MEMORY_WALL.map((item, i) => (
           <button
             key={item.src}
             type="button"
             onClick={() => setActive(i)}
-            className="snap-center shrink-0 w-[78vw] polaroid"
+            className="snap-center shrink-0 w-[min(78vw,320px)] polaroid"
             style={{ transform: `rotate(${item.rotate}deg)` }}
           >
             <img src={encodeURI(item.src)} alt={item.caption} className="w-full aspect-[3/4] object-cover" />

@@ -37,7 +37,8 @@ export default function HeroSection() {
         </motion.p>
 
         <motion.h1
-          className="font-script text-[72px] sm:text-[88px] md:text-[108px] leading-[0.9] text-text"
+          className="font-script text-text break-words px-2"
+          style={{ fontSize: 'clamp(28px, 9.5vw, 108px)', lineHeight: 0.9 }}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.12, duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
@@ -59,7 +60,8 @@ export default function HeroSection() {
         </motion.div>
 
         <motion.h1
-          className="font-script text-[72px] sm:text-[88px] md:text-[108px] leading-[0.9] text-text mb-8"
+          className="font-script text-text mb-8 break-words px-2"
+          style={{ fontSize: 'clamp(28px, 9.5vw, 108px)', lineHeight: 0.9 }}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.9 }}
@@ -77,13 +79,13 @@ export default function HeroSection() {
         >
           <motion.div animate={{ y: [0, -7, 0] }} transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }} className="relative">
             <div
-              className="absolute -inset-3 rounded-2xl"
+              className="absolute inset-0 rounded-2xl"
               style={{ background: 'linear-gradient(135deg, rgba(239,184,200,0.4), rgba(244,184,200,0.3))', filter: 'blur(14px)' }}
             />
             <img
               src={wedding.heroImage}
               alt={`${wedding.coupleDisplay} Wedding`}
-              className="relative w-[220px] md:w-[270px] rounded-2xl object-cover gold-border-frame"
+              className="relative w-full max-w-[220px] md:max-w-[270px] rounded-2xl object-cover gold-border-frame"
               style={{ border: '2px solid rgba(212,120,140,0.4)', boxShadow: '0 22px 48px rgba(74,44,54,0.14)' }}
             />
           </motion.div>
