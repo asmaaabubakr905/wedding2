@@ -1,15 +1,19 @@
-import { motion } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
+import { useRef } from 'react';
 import { wedding } from './media';
 import MagneticButton from './MagneticButton';
 
 export default function FindThePlace() {
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: true, amount: 0.3 });
+
   return (
     <section className="relative min-h-screen wine-wash overflow-hidden px-5 py-28 md:py-36 flex items-center">
       <div className="relative w-full max-w-4xl mx-auto">
         <p className="font-accent text-[10px] tracking-[0.5em] text-champagne text-center mb-4">FIND THE PLACE</p>
         <h2 className="font-script text-5xl md:text-7xl text-ivory text-center mb-14">{wedding.venue.name}</h2>
 
-        <div className="relative h-[420px] md:h-[520px] border border-gold/20 bg-[#12080b]">
+        <div ref={ref} className="relative h-[420px] md:h-[520px] border border-gold/20 bg-[#12080b]">
           <svg viewBox="0 0 800 520" className="absolute inset-0 w-full h-full" aria-hidden>
             <defs>
               <linearGradient id="route" x1="0" y1="1" x2="1" y2="0">
@@ -25,9 +29,8 @@ export default function FindThePlace() {
               strokeWidth="2.2"
               strokeDasharray="900"
               initial={{ strokeDashoffset: 900 }}
-              whileInView={{ strokeDashoffset: 0 }}
+              animate={isInView ? { strokeDashoffset: 0 } : { strokeDashoffset: 900 }}
               transition={{ duration: 2.8, ease: 'easeInOut' }}
-              viewport={{ once: true }}
             />
             <circle cx="90" cy="430" r="5" fill="#d4c4a0" />
             <circle cx="690" cy="110" r="7" fill="#f6f0e8" />
@@ -48,9 +51,8 @@ export default function FindThePlace() {
           <motion.div
             className="absolute top-10 right-6 md:right-16 text-right"
             initial={{ opacity: 0, y: 12 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 12 }}
             transition={{ delay: 1.4 }}
-            viewport={{ once: true }}
           >
             <p className="font-display text-2xl md:text-3xl text-ivory">{wedding.venue.name}</p>
             {wedding.venue.city ? (
